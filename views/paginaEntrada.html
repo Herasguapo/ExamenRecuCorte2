@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Microinformatica-Examen</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 500px;
+            height: auto;
+            background-color: aquamarine;
+        }
+
+        .centrarDiv {
+            display: grid;
+            place-items: center;
+        }
+
+        .separacion {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .contenido {
+            background-color: rgb(236, 255, 127);
+            border: 1px solid black;
+        }
+
+        footer{
+            background-color: rgb(255, 127, 206);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center" >
+
+    <main class="container">
+
+        <%-include('partials/header.html');%>
+
+        <%-include('partials/navBar.html');%>
+        <div class="contenido">
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <form action="/paginaSalida" method="p">
+                        <div class="form-group">
+                            <label for="NumContacto">Numero de Recibo:</label>
+                            <input id="NumRecibo" name="NumRecibo" type="number" min="1" required="true" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Nombre">Nombre:</label>
+                            <input id="Nombre" name="Nombre" type="text" min="1" required="true" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Domicilio">Domicilio:</label>
+                            <input id="Domicilio" name="Domicilio" type="text" required="true" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="NivelDeEstudios">Tipo de Servicio:</label>
+                            <select name="TipoServicio" id="TipoServicio" value="" required="true"
+                                class="form-control">
+                                <option value="Domestico">Domestico</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Industrial">Industrial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PagoDiario">Kilowatts Consumidos:</label>
+                            <input id="Kilowatts" name="Kilowatts" type="number" min="1" required="true" class="form-control">
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="submit" class="btn btn-primary mr-3">Enviar</button>
+                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        
+        <footer>
+            <%-include('partials/footer.html'); %>
+        </footer>
+       
+    </main>
+</body>
+</html>

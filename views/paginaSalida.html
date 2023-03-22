@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen Corte 2</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 500px;
+            height: auto;
+            background-color: aquamarine;
+        }
+
+        .centrarDiv {
+            display: grid;
+            place-items: center;
+        }
+
+        .separacion {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .contenido {
+            background-color: rgb(236, 255, 127);
+            border: 1px solid black;
+        }
+
+        footer{
+            background-color: rgb(255, 127, 206);
+        }
+  </style>
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center">
+
+  <main class="container">
+
+    <%-include('partials/header.html');%>
+
+    <%-include('partials/navBar.html');%>
+
+    <div class="centrarDiv contenido separacion">
+      <table class="table caption-top">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo de Recibo</th>
+            <th scope="col">Kilowatts Consumidos</th>
+            <th scope="col">Costo por Kilowatts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Nombre</th>
+
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>SubTotal:</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>Impuesto:</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>Descuento:</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>Total a Pagar:</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+
+    <%-include('partials/footer.html');%>
+
+  </main>
+</body>
+</html>
