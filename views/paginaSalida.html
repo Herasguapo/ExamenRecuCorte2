@@ -43,6 +43,49 @@
 </head>
 
 <body class="d-flex flex-column justify-content-center align-items-center">
+  <%
+    let nombre = Nombre;
+    let tipoServicio = TipoServicio;
+    let kilowatts = Kilowatts;
+
+    let descuento = 0;
+    let precioPorKilowatts = 0;
+
+    let ISR = 0.16;
+    let impuesto = 0;
+
+    let subtotal = 0;
+    let total = 0;
+
+    if(tipoServicio == 'Domestico'){
+      precioPorKilowatts = 1.08;
+
+    } else if(tipoServicio == 'Comercial'){
+      precioPorKilowatts = 2.50;
+
+    } else if(tipoServicio == 'Industrial'){
+      precioPorKilowatts = 3;
+
+    }
+
+    subtotal = precioPorKilowatts * kilowatts;
+    impuesto = subtotal * ISR;
+    
+    
+    if(kilowatts <= 1000){
+      descuento = subtotal * 0.10;
+
+    } else if(kilowatts <= 10000){
+      descuento = subtotal *  0.20;
+
+    } else if(kilowatts > 10000){
+      descuento = subtotal * 0.50;
+
+    }
+
+    total = (subtotal + impuesto) - descuento;
+    
+    %>
 
   <main class="container">
 
@@ -56,35 +99,41 @@
         <thead>
           <tr>
             <th scope="col">Nombre</th>
-            <th scope="col">Tipo de Recibo</th>
+            <th scope="col">Tipo de Servicio</th>
             <th scope="col">Kilowatts Consumidos</th>
             <th scope="col">Costo por Kilowatts</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Nombre</th>
-
+            <th scope="row"><%= nombre %></th>
+            <th scope="row"><%= tipoServicio %></th>
+            <th scope="row"><%= kilowatts %></th>
+            <th scope="row"><%= precioPorKilowatts %></th>
           </tr>
           <tr>
             <th scope="row"></th>
             <td></td>
             <td>SubTotal:</td>
+            <td><%= subtotal %></td>
           </tr>
           <tr>
             <th scope="row"></th>
             <td></td>
             <td>Impuesto:</td>
+            <td><%= impuesto %></td>
           </tr>
           <tr>
             <th scope="row"></th>
             <td></td>
             <td>Descuento:</td>
+            <td><%= descuento %></td>
           </tr>
           <tr>
             <th scope="row"></th>
             <td></td>
             <td>Total a Pagar:</td>
+            <td><%= total %></td>
           </tr>
         </tbody>
       </table>

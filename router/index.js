@@ -8,20 +8,32 @@ const router = express.Router();
 // Ruta principal que muestra una página con los datos del array "datos"
 router.get("/", (req, res) => {
   const params = {
-    NumContrato: req.query.NumContrato,
     Nombre: req.query.Nombre,
-    NivelDeEstudios: req.query.NivelDeEstudios,
-    PagoDiario: req.query.PagoDiario,
-    DiasTrabajados: req.query.DiasTrabajados,
-    SubTotal: req.query.SubTotal,
-    Total: req.query.Total
+    TipoServicio: req.query.TipoServicio,
+    Kilowatts: req.query.Kilowatts
+};
+res.render("paginaEntrada.html", params);
+});
+
+router.post("/", (req, res) => {
+  const params = {
+    Nombre: req.body.Nombre,
+    TipoServicio: req.body.TipoServicio,
+    Kilowatts: req.body.Kilowatts
 };
 res.render("paginaSalida.html", params);
 });
 
-router.post("/paginaSalida", (req, res) => {
+router.get("/paginaSalida", (req, res) => {
+  const params = {
+    Nombre: req.query.Nombre,
+    TipoServicio: req.query.TipoServicio,
+    Kilowatts: req.query.Kilowatts
+};
 res.render("paginaSalida.html", params);
 });
+
+
 
 // Exportar el módulo Router para que pueda ser utilizado en otros archivos
 module.exports = router;
