@@ -59,14 +59,11 @@
 
     if(tipoServicio == 'Domestico'){
       precioPorKilowatts = 1.08;
-
-    } else if(tipoServicio == 'Comercial'){
-      precioPorKilowatts = 2.50;
-
-    } else if(tipoServicio == 'Industrial'){
-      precioPorKilowatts = 3;
-
-    }
+      } else if(tipoServicio == 'Comercial'){
+        precioPorKilowatts = 2.50;
+        } else if(tipoServicio == 'Industrial'){
+          precioPorKilowatts = 3;
+        }
 
     subtotal = precioPorKilowatts * kilowatts;
     impuesto = subtotal * ISR;
@@ -74,14 +71,11 @@
     
     if(kilowatts <= 1000){
       descuento = subtotal * 0.10;
-
-    } else if(kilowatts <= 10000){
-      descuento = subtotal *  0.20;
-
-    } else if(kilowatts > 10000){
-      descuento = subtotal * 0.50;
-
-    }
+      } else if(kilowatts <= 10000){
+        descuento = subtotal *  0.20;
+        } else if(kilowatts > 10000){
+          descuento = subtotal * 0.50;
+        }
 
     total = (subtotal + impuesto) - descuento;
     

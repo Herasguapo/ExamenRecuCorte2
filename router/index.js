@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     Nombre: req.query.Nombre,
     TipoServicio: req.query.TipoServicio,
     Kilowatts: req.query.Kilowatts
-};
+  };
 res.render("paginaEntrada.html", params);
 });
 
@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     Nombre: req.body.Nombre,
     TipoServicio: req.body.TipoServicio,
     Kilowatts: req.body.Kilowatts
-};
+  };
 res.render("paginaSalida.html", params);
 });
 
@@ -29,11 +29,9 @@ router.get("/paginaSalida", (req, res) => {
     Nombre: req.query.Nombre,
     TipoServicio: req.query.TipoServicio,
     Kilowatts: req.query.Kilowatts
-};
+  };
 res.render("paginaSalida.html", params);
 });
-
-
 
 // Exportar el módulo Router para que pueda ser utilizado en otros archivos
 module.exports = router;
